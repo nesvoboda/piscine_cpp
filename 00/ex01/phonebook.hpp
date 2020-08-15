@@ -1,27 +1,7 @@
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 # include <string>
-
-class Entry {
-
-public:
-
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string login;
-	std::string postal_address;
-	std::string email_address;
-	std::string phone_number;
-	std::string birthday_date;
-	std::string favorite_meal;
-	std::string underwear_color;
-	std::string darkest_secret;
-
-	Entry(void);
-	~Entry(void);
-	void fill_entry(void);
-};
+# include <iostream>
 
 class Field {
 
@@ -33,6 +13,48 @@ public:
 	Field(std::string name);
 	~Field(void);
 	void fill_field(void);
+	void print_column(int border);
+	void print_field(void);
+};
+
+
+class Entry {
+
+public:
+
+	Field first_name;
+	Field last_name;
+	Field nickname;
+	Field login;
+	Field postal_address;
+	Field email_address;
+	Field phone_number;
+	Field birthday_date;
+	Field favorite_meal;
+	Field underwear_color;
+	Field darkest_secret;
+	int filled;
+
+	Entry(void);
+	~Entry(void);
+	void fill_entry(void);
+	void print_row(int index);
+	void print_single(void);
+};
+
+
+class Phonebook {
+
+public:
+	Entry contents[8];
+
+	Phonebook(void);
+	void add_entry(void);
+	void search(void);
+	void print_table_head(void);
+	void horisontal_divider(void);
+	void pretty_print(std::string word);
+	void retrieve(int index);
 };
 
 #endif

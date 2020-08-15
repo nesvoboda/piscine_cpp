@@ -6,13 +6,13 @@
 #    By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/08 14:05:19 by ashishae          #+#    #+#              #
-#    Updated: 2020/08/14 18:34:05 by ashishae         ###   ########.fr        #
+#    Updated: 2020/08/15 21:48:52 by ashishae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp Phonebook.cpp Entry.cpp Field.cpp
+SRCS = Account.cpp tests.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = phonebook
+NAME = accounts
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)

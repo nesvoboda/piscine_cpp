@@ -1,101 +1,120 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/14 18:32:09 by ashishae          #+#    #+#             */
+/*   Updated: 2020/08/14 19:30:51 by ashishae         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "phonebook.hpp"
-#include <iostream>
 
-Entry::Entry(void)
+Phonebook::Phonebook(void)
 {
-	std::cout << "Constructor called" << std::endl;
+
 }
 
-Entry::~Entry(void)
+void Phonebook::add_entry(void)
 {
-	std::cout << "Destructor called" << std::endl;
-}
-
-Field::Field(std::string name)
-{
-	std::cout << "Field Constructor called" << std::endl;
-	this->name.assign(name);
-}
-
-Field::~Field(void)
-{
-	std::cout << "Field Destructor called" << std::endl;
-}
-
-void Field::fill_field(void)
-{
-	std::string buffer;
-	std::cout << "Enter " << this->name << ": ";
-	std::cin >> buffer;
-	this->value.assign(buffer);
-}
-
-
-void Entry::fill_entry(void)
-{
-	std::string buffer;
-
-	std::cout << "We're creating a new contact." << std::endl;
-
-	std::cout << "Enter first_name: " << std::endl;
-	std::cin >> buffer;
-	this->first_name.assign(buffer);
-
-	std::cout << "Enter last_name: " << std::endl;
-	std::cin >> buffer;
-	this->last_name.assign(buffer);
-
-	std::cout << "Enter nickname: " << std::endl;
-	std::cin >> buffer;
-	this->nickname.assign(buffer);
-
-	std::cout << "Enter login: " << std::endl;
-	std::cin >> buffer;
-	this->login.assign(buffer);
-
-	std::cout << "Enter postal_address: " << std::endl;
-	std::cin >> buffer;
-	this->postal_address.assign(buffer);
-
-	std::cout << "Enter email_address: " << std::endl;
-	std::cin >> buffer;
-	this->email_address.assign(buffer);
-
-	std::cout << "Enter phone_number: " << std::endl;
-	std::cin >> buffer;
-	this->phone_number.assign(buffer);
-
-	std::cout << "Enter birthday_date: " << std::endl;
-	std::cin >> buffer;
-	this->birthday_date.assign(buffer);
-
-	std::cout << "Enter favorite_meal: " << std::endl;
-	std::cin >> buffer;
-	this->favorite_meal.assign(buffer);
-
-	std::cout << "Enter underwear_color: " << std::endl;
-	std::cin >> buffer;
-	this->underwear_color.assign(buffer);
-
-	std::cout << "Enter darkest_secret: " << std::endl;
-	std::cin >> buffer;
-	this->darkest_secret.assign(buffer);
-}
-
-int main(void)
-{
-	std::string buffer;
-	Entry telephone;
-
-	std::cout << "Hello!" << std::endl;
-
-	for(int i = 0; i < 3; i++)
+	std::cout << std::endl;
+	for (int i = 0; i < 8; i++)
 	{
-		std::cout << "Enter number: ";
-		std::cin >> buffer;
-		telephone.set_number(buffer);
-		std::cout << "The number is: " << telephone.number << std::endl;
-		std::cout << "Or" << std::endl;
-		telephone.print_number();
+		if (this->contents[i].filled == 0)
+		{
+			this->contents[i].fill_entry();
+			std::cout << std::endl << "Great!" << std::endl << std::endl;
+			return;
+		}
+	}
+	std::cout << "SORRY! THE PHONEBOOK IS FULL." << std::endl << std::endl;
+}
+
+void Phonebook::horisontal_divider(void)
+{
+	for (int i = 0; i < 53; i++)
+	{
+		std::cout << "-";
+	}
+	std::cout << std::endl;
+}
+
+void Phonebook::retrieve(int index)
+{
+	if (this->contents[index].filled == 0)
+	{
+		std::cout << "Sorry, there is no contact under this index." << 
+			std::endl << std::endl;
+	}
+	else
+	{
+		std::cout << std::endl;
+		this->contents[index].print_single();
+		std::cout << std::endl;
+	}
+}
+
+void Phonebook::search(void)
+{
+
+	if (this->contents[0].filled == 0)
+	{
+		std::cout << std::endl << "No contacts added yet. Try adding one!"
+		<< std::endl << std::endl;
+		return;
+	}
+	int buffer = -1;
+	std::cout << std::endl;
+	this->horisontal_divider();
+	this->print_table_head();
+	this->horisontal_divider();
+	for (int i = 0; i < 8; i++)
+	{
+		if (this->contents[i].filled == 0)
+		{
+			break ;
+		}
+		this->contents[i].print_row(i);
+	}
+	this->horisontal_divider();
+	std::cout << std::endl << "Enter the index: ";
+	std::cin >> buffer;
+	std::cin.ignore(100,'\n');
+	if (buffer < 0 || buffer > 7)
+	{
+		std::cout << "Sorry, index can only be an integer between 0 and 7." <<
+			std::endl;
+		return ;
+	}
+	this->retrieve(buffer);
+}
+
+void Phonebook::print_table_head(void)
+{
+	std::cout << "| ";
+	this->pretty_print("Index");
+	std::cout << " | ";
+	this->pretty_print("First name");
+	std::cout << " | ";
+	this->pretty_print("Last name");
+	std::cout << " | ";
+	this->pretty_print("Nickname");
+	std::cout << " |" << std::endl;
+}
+
+void Phonebook::pretty_print(std::string word)
+{
+	int length;
+
+	length = word.length();
+	for (int i = 0; i < 10 - length; i++)
+	{
+		std::cout << " ";
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << word[i];
 	}
 }
