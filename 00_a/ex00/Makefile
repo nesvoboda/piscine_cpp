@@ -6,16 +6,16 @@
 #    By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/08 14:05:19 by ashishae          #+#    #+#              #
-#    Updated: 2020/08/24 16:46:56 by ashishae         ###   ########.fr        #
+#    Updated: 2020/08/24 17:09:04 by ashishae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = Account.cpp tests.cpp
+SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = accounts
-CFLAGS = -Wall -Wextra -Werror -std=c++11
+NAME = megaphone
+CFLAGS = -Wall -Wextra -Werror
 
-all: $(NAME)
+all:		$(NAME)
 
 .c.o:
 			clang++ $(CFLAGS) -c $< -o $@
