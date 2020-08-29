@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/26 14:11:55 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/27 15:53:25 by ashishae         ###   ########.fr       */
+/*   Created: 2020/08/27 16:21:00 by ashishae          #+#    #+#             */
+/*   Updated: 2020/08/27 17:52:09 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Brain.hpp"
+#include <sstream>
 
-# include <string>
-# include <iostream>
-
-class Zombie
+Brain::Brain(void)
 {
+	/* initialize random seed: */
+ 	srand (time(NULL));
 
-public:
+	this->volume = rand() % 1000;
+	this->iq = rand() % 150;
+}
 
-	Zombie(std::string name, std::string type);
-	Zombie(void);
-	void	announce(void);
-	void	setName(std::string name);
-	void	setType(std::string name);
-	std::string name;
+std::string Brain::identify()
+{
+	std::stringstream sst;
 
-private:
+	sst << this;
 
-	
-	std::string type;
-
-};
-
-#endif
+	return sst.str();
+}

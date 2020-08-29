@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/26 14:11:55 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/27 15:53:25 by ashishae         ###   ########.fr       */
+/*   Created: 2020/08/27 17:45:47 by ashishae          #+#    #+#             */
+/*   Updated: 2020/08/29 13:26:29 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 # include <string>
-# include <iostream>
 
-class Zombie
+class Weapon
 {
-
 public:
-
-	Zombie(std::string name, std::string type);
-	Zombie(void);
-	void	announce(void);
-	void	setName(std::string name);
-	void	setType(std::string name);
-	std::string name;
+	Weapon(std::string type);
+	// ~Weapon();
+	const std::string	&getType(void);
+	const void			setType(std::string type);
 
 private:
-
-	
 	std::string type;
 
 };

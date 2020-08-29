@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/26 14:11:55 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/27 15:53:25 by ashishae         ###   ########.fr       */
+/*   Created: 2020/08/27 16:06:09 by ashishae          #+#    #+#             */
+/*   Updated: 2020/08/27 16:21:23 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include <string>
+#include <iostream>
 
-# include <string>
-# include <iostream>
-
-class Zombie
+int main(void)
 {
+	std::string sentence = "HI THIS IS BRAIN";
 
-public:
+	std::string *pointer;
 
-	Zombie(std::string name, std::string type);
-	Zombie(void);
-	void	announce(void);
-	void	setName(std::string name);
-	void	setType(std::string name);
-	std::string name;
+	pointer = &sentence;
 
-private:
+	std::cout << "Here's the string by pointer: " << *pointer << std::endl;
 
-	
-	std::string type;
+	std::string &reference = sentence;
 
-};
-
-#endif
+	std::cout << "Here's the string by reference: " << reference << std::endl;
+	return 0;
+}
