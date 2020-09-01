@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 12:40:22 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/30 13:34:58 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/08/31 15:19:30 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,13 @@ int main(void)
 	ftrap.vaulthunter_dot_exe("enemy");
 	ftrap.vaulthunter_dot_exe("enemy");
 	ftrap.vaulthunter_dot_exe("enemy");
+
+	std::cout << "Now let's test a copy constructor" << std::endl;
+	FragTrap ftrap2(ftrap);
+	ftrap2.takeDamage(6);
+
+	std::cout << "... And the assignment operator overload" << std::endl;
+	FragTrap ftrap3 = ftrap2;
+	ftrap3.takeDamage(10);
 	return 0;
 }

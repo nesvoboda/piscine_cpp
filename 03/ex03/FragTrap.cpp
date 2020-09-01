@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 12:40:22 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/31 14:50:13 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/08/31 15:13:19 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,33 @@ FragTrap::FragTrap(std::string future_name)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called" << std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap &copy)
+{
+	hitPoints = copy.hitPoints;
+	maxHitPoints = copy.maxHitPoints;
+	energyPoints = copy.energyPoints;
+	maxEnergyPoints = copy.maxEnergyPoints;
+	level = copy.level;
+	name = copy.name;
+	meleeAttackDamage = copy.meleeAttackDamage;
+	rangedAttackDamage = copy.rangedAttackDamage;
+	armorDamageReduction = copy.armorDamageReduction;
+}
+
+FragTrap &FragTrap::operator= (const FragTrap &operand)
+{
+	hitPoints = operand.hitPoints;
+	maxHitPoints = operand.maxHitPoints;
+	energyPoints = operand.energyPoints;
+	maxEnergyPoints = operand.maxEnergyPoints;
+	level = operand.level;
+	name = operand.name;
+	meleeAttackDamage = operand.meleeAttackDamage;
+	rangedAttackDamage = operand.rangedAttackDamage;
+	armorDamageReduction = operand.armorDamageReduction;
+	return (*this);
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const & target)
