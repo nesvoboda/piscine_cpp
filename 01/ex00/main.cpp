@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/23 19:28:11 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/04 17:42:20 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/04 17:47:43 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,25 @@ void	ponyOnTheStack(void)
 
 	std::cout << "Address of stackPony is: " << pointerToStackPony
 	<< std::endl;
+	stackPony.neigh();
 }
 
 // ponyOnTheHeap will create a 
 // dynamically allocated pony
-Pony *ponyOnTheHeap(void)
+void	ponyOnTheHeap(void)
 {
 	Pony *heapPony = new Pony;
-	return heapPony;
+
+	std::cout << "Address of heapPony is: " << heapPony
+	<< std::endl;
+	heapPony->neigh();
+	delete heapPony;
+	std::cout << "Heap pony will not exist by this point" << std::endl;
 }
 
 int main(void)
 {
-	Pony *heapPony = ponyOnTheHeap();
-	std::cout << "Address of heapPony is: " << heapPony
-	<< std::endl;
-	delete heapPony;
-
+	ponyOnTheHeap();
 	ponyOnTheStack();
 	std::cout << "Stack pony will not exist by this point" << std::endl;
 }

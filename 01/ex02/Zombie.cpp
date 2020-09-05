@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 14:11:55 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/26 15:35:52 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/04 17:56:07 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,25 @@ Zombie::Zombie(std::string name, std::string type)
 	this->type.assign(type);
 }
 
+Zombie::Zombie(void)
+{
+	this->name.assign("John Doe");
+	this->type.assign("Ordinary Zombie");
+}
+
 void	Zombie::announce(void)
 {
 	std::cout << "<" << this->name << " (" << this->type << ")> "
 	<< "Braiiiiiiinnnssss..." << std::endl;
+}
+
+// This is not really useful in this exercise, but will be needed in ex03.
+void	Zombie::setName(std::string name)
+{
+	this->name.assign(name);
+}
+
+void	Zombie::setType(std::string type)
+{
+	this->type.assign(type);
 }

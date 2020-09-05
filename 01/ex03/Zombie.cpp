@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 14:11:55 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/26 16:27:55 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/05 08:34:18 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Zombie::Zombie(std::string name, std::string type)
 
 Zombie::Zombie(void)
 {
-	this->name.assign("");
+	this->name.assign("John Doe");
 	this->type.assign("Ordinary Zombie");
 }
 

@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 14:11:55 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/26 15:35:58 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/04 17:49:12 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define ZOMBIEEVENT_HPP
 
 # include <string>
-# include "Zombie.hpp"
 # include <cstdlib>
+# include "Zombie.hpp"
 
 class ZombieEvent
 {

@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 14:11:55 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/26 15:27:14 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/04 17:50:32 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void ZombieEvent::randomChump(void)
 
 	Zombie chump(names[std::rand() % 10], this->zombieType);
 	chump.announce();
-
 }
 
 Zombie *ZombieEvent::newZombie(std::string name)

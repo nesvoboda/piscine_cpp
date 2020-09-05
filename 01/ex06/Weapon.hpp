@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 17:45:47 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/29 13:26:29 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/05 08:35:20 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class Weapon
 public:
 	Weapon(std::string type);
 	// ~Weapon();
-	const std::string	&getType(void);
-	const void			setType(std::string type);
+	std::string		&getType(void);
+	void			setType(std::string type);
 
 private:
 	std::string type;

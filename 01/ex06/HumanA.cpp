@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 17:45:47 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/29 13:55:39 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/05 08:31:40 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ weapon(future_weapon)
 	this->name.assign(Name);
 }
 
-const void	HumanA::attack(void)
+void	HumanA::attack(void)
 {
 	std::cout << this->name << " attacks with his " << this->weapon.getType()
 	<< std::endl;

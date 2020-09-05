@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/29 13:34:57 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/29 13:53:31 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/05 08:31:15 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class HumanB
 {
 public:
 	HumanB(std::string Name);
-	const void	attack(void);
-	const void	setWeapon(Weapon &weapon);
+	void	attack(void);
+	void	setWeapon(Weapon &weapon);
 
 private:
 	Weapon *weapon;
