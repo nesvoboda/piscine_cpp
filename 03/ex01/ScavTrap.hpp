@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 11:39:09 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/31 11:48:25 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/06 14:49:36 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ private:
 	unsigned int rangedAttackDamage;
 	unsigned int armorDamageReduction;
 };
-
 
 #endif
 

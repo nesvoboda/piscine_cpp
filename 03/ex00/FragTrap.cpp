@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 12:40:22 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/31 15:11:31 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/06 14:49:17 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,9 +134,6 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
 		42,
 		40
 	};
-	
-	
-
 
 	int attackNo = rand() % 6;  // generates number in the range 1..6 
 

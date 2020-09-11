@@ -6,13 +6,13 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 11:34:20 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/30 11:49:17 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/06 08:29:43 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-static const int fbits = 8;
+const int Fixed::fbits = 8;
 
 Fixed::Fixed() :
 	value(0)

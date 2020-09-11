@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/31 12:51:54 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/06 14:50:55 by ashishae         ###   ########.fr       */
+/*   Created: 2020/09/06 10:58:35 by ashishae          #+#    #+#             */
+/*   Updated: 2020/09/06 12:35:47 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJA_TRAP_HPP
-# define NINJA_TRAP_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
-# include "ClapTrap.hpp"
-# include "FragTrap.hpp"
-# include "ScavTrap.hpp"
+# include <string>
 
-class NinjaTrap : public ClapTrap
+# include "AMateria.hpp"
+
+class ICharacter
 {
 public:
-	NinjaTrap(std::string name);
-	NinjaTrap(const NinjaTrap &copy);
-	NinjaTrap &operator= (const NinjaTrap &operand);
-	~NinjaTrap();
-	void	ninjaShoebox(FragTrap &target);
-	void	ninjaShoebox(ScavTrap &target);
-	void	ninjaShoebox(NinjaTrap &target);
+	virtual ~ICharacter() {}
+	virtual std::string const & getName() const = 0;
+	virtual void equip(AMateria* m) = 0;
+	virtual void unequip(int idx) = 0;
+	virtual void use(int idx, ICharacter& target) = 0;
 };
 
 #endif

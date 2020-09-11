@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:15:09 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/31 14:52:05 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/06 14:51:24 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ public:
 	void	rangedAttack(std::string const &target);
 	void	meleeAttack(std::string const &target);
 };
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:15:09 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/31 14:55:11 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/06 14:52:47 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 SuperTrap::SuperTrap(std::string future_name) :
 	FragTrap(future_name), NinjaTrap(future_name)
 {
-	this->typeShort = "NN7A-TP";
+	this->typeShort = "SU7A-TP";
 	this->hitPoints = FragTrap::hitPoints;
 	this->maxHitPoints = FragTrap::maxHitPoints;
 	this->energyPoints = NinjaTrap::energyPoints;

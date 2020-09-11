@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 12:51:54 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/31 14:50:47 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/06 14:55:15 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	NinjaTrap::ninjaShoebox(FragTrap &target)
 	this->energyPoints -= 25;
 
 
-	std::cout << "NN7A-TP " << this->name << " attacks FragTrap " << target.getName() 
+	std::cout << this->typeShort << " " << this->name << " attacks FragTrap " << target.getName() 
 	<< " with a special ninja shoebox attack, causing " << 25
 	 << " points of damage!"
 	<< std::endl;
@@ -62,7 +62,7 @@ void	NinjaTrap::ninjaShoebox(ScavTrap &target)
 	this->energyPoints -= 25;
 
 
-	std::cout << "NN7A-TP " << this->name << " attacks ScavTrap " << target.getName() 
+	std::cout << this->typeShort << " " << this->name << " attacks ScavTrap " << target.getName() 
 	<< " with a special ninja shoebox attack, causing " << 25
 	 << " points of damage!"
 	<< std::endl;
@@ -81,7 +81,7 @@ void	NinjaTrap::ninjaShoebox(NinjaTrap &target)
 	this->energyPoints -= 25;
 
 
-	std::cout << "NN7A-TP " << this->name << " attacks NinjaTrap " << target.getName() 
+	std::cout << this->typeShort << " " << this->name << " attacks NinjaTrap " << target.getName() 
 	<< " with a special ninja shoebox attack, causing " << 25
 	 << " points of damage!"
 	<< std::endl;

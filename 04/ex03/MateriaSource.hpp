@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/31 12:51:54 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/06 14:50:55 by ashishae         ###   ########.fr       */
+/*   Created: 2020/09/06 10:58:35 by ashishae          #+#    #+#             */
+/*   Updated: 2020/09/06 12:17:00 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJA_TRAP_HPP
-# define NINJA_TRAP_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
-# include "ClapTrap.hpp"
-# include "FragTrap.hpp"
-# include "ScavTrap.hpp"
+# include <iostream>
+# include <string>
 
-class NinjaTrap : public ClapTrap
+# include "IMateriaSource.hpp"
+
+class MateriaSource : public IMateriaSource
 {
+private:
+	AMateria *localMateria;
+
 public:
-	NinjaTrap(std::string name);
-	NinjaTrap(const NinjaTrap &copy);
-	NinjaTrap &operator= (const NinjaTrap &operand);
-	~NinjaTrap();
-	void	ninjaShoebox(FragTrap &target);
-	void	ninjaShoebox(ScavTrap &target);
-	void	ninjaShoebox(NinjaTrap &target);
+	MateriaSource();
+	MateriaSource(const MateriaSource &copy);
+	MateriaSource &operator= (const MateriaSource &operand);
+	~MateriaSource();
+	void learnMateria(AMateria*);
+	AMateria* createMateria(std::string const & type);
 };
 
 #endif

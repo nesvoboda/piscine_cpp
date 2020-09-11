@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 11:39:09 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/31 11:54:45 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/06 14:49:49 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void ScavTrap::challengeNewcomer(std::string const &target)
 
 	int attackNo = rand() % 6;  // generates number in the range 1..6 
 
-	std::cout << "FR4G-TP " << this->name << " attacks " << target 
+	std::cout << "SC4V-TP " << this->name << " attacks " << target 
 	<< " with " << attacks[attackNo] <<", causing " << attackDamage[attackNo]
 	 << " points of damage!"
 	<< std::endl;

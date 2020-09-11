@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 11:39:09 by ashishae          #+#    #+#             */
-/*   Updated: 2020/08/31 12:49:34 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/06 14:50:00 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ public:
 	~ScavTrap();
 	void	challengeNewcomer(std::string const & target);
 };
-
 
 #endif
 
