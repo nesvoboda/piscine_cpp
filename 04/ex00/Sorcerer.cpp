@@ -6,25 +6,15 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 15:05:13 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/01 13:34:38 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/13 18:19:25 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 
-Sorcerer::Sorcerer()
-{
-	std::cout << "Sorcerer default constructor called" << std::endl;
-	this->name = "John Doe";
-	this->title = "Default sorcerer";
-	std::cout << this->name << ", " << this->title << ", is born!" << std::endl;
-
-}
-
 Sorcerer::Sorcerer(std::string new_name, std::string new_title) :
 	name(new_name), title(new_title)
 {
-
 	std::cout << this->name << ", " << this->title << ", is born!" << std::endl;
 }
 
@@ -32,7 +22,7 @@ Sorcerer::Sorcerer(const Sorcerer &copy)
 {
 	this->title = copy.title;
 	this->name = copy.name;
-	std::cout << "Sorcerer copy constructor called" << std::endl;
+	std::cout << this->name << ", " << this->title << ", is born!" << std::endl;
 }
 
 Sorcerer &Sorcerer::operator= (const Sorcerer &operand)

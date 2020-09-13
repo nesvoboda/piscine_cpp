@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 15:05:13 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/01 13:12:58 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/13 18:13:13 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@
 
 class Victim
 {
-public:
+private:
+	// A victim without a name doesn't make a lot of sense
 	Victim();
+
+public:
 	Victim(std::string name);
 	Victim(const Victim &copy);
 	Victim &operator= (const Victim &operand);

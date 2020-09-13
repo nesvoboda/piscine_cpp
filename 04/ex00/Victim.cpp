@@ -6,30 +6,24 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 15:05:13 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/01 13:33:08 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/13 18:13:32 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Victim.hpp"
-
-Victim::Victim()
-{
-	this->name = "Random Passerby";
-	std::cout << "Some random victim called " << 
-	this->name << " just appeared!" << std::endl;
-}
 
 Victim::Victim(std::string new_name) :
 	name(new_name)
 {
 	std::cout << "Some random victim called " << 
 	this->name << " just appeared!" << std::endl;
-
 }
 
 Victim::Victim(const Victim &copy)
 {
 	this->name = copy.name;
+	std::cout << "Some random victim called " << 
+	this->name << " just appeared!" << std::endl;
 }
 
 Victim& Victim::operator= (const Victim &operand)

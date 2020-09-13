@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 15:05:13 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/01 13:35:01 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/13 18:13:10 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@
 
 class Sorcerer
 {
-public:
+private:
+	// The class can’t be instanciated without parameters 
 	Sorcerer();
+
+public:
 	Sorcerer(std::string name, std::string title);
 	Sorcerer(const Sorcerer &copy);
 	Sorcerer &operator= (const Sorcerer &operand);
