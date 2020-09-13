@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/01 17:48:10 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/13 18:28:42 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,17 @@ private:
 	std::string name;
 	int apcost;
 	int damage;
+	AWeapon();
 
 public:
-	AWeapon();
 	AWeapon(std::string const &name, int apcost, int damage);
 	AWeapon(const AWeapon &copy);
 	AWeapon &operator= (const AWeapon &operand);
 	virtual ~AWeapon();
 	int getAPCost() const;
 	int getDamage() const;
-	std::string getName() const;
 	virtual void attack() const = 0;
-	
+	std::string getName() const;
 };
 
 #endif

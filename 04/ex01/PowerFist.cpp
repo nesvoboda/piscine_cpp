@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/01 14:21:56 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/13 18:50:38 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ PowerFist & PowerFist::operator= (const PowerFist &operand)
 
 PowerFist::~PowerFist()
 {
-	std::cout << "Power fist destroyed" << std::endl;
 }
 
 void PowerFist::attack() const

@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/01 17:50:11 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/13 18:51:21 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class Enemy
 private:
 	int hp;
 	std::string type;
+	Enemy();
 
 public:
-	Enemy();
 	Enemy(int hp, std::string const & type);
 	Enemy(const Enemy &copy);
 	Enemy &operator= (const Enemy &operand);

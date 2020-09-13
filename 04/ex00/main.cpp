@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 15:05:13 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/13 18:13:41 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/13 18:31:09 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 void out(std::string s)
 {
 	std::cout << std::endl;
-	std::cout << s << std::endl;
+	std::cout << "\033[0;34m" << s << "\033[0m" << std::endl;
 }
 
 void eo(std::string s)
 {
-	std::cout << "Expected output:" << std::endl;
+	std::cout << "\33[1;33m" << "Expected output:" <<"\033[0m" << std::endl;
 	std::cout << s << std::endl;
 }
 

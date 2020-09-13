@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/01 14:16:04 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/13 18:47:35 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ PlasmaRifle & PlasmaRifle::operator= (const PlasmaRifle &operand)
 
 PlasmaRifle::~PlasmaRifle()
 {
-	std::cout << "Plasma rifle destroyed" << std::endl;
 }
 
 void PlasmaRifle::attack() const
