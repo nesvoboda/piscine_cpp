@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.cpp                                    :+:      :+:    :+:   */
+/*   OldRifle.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/14 15:14:15 by ashishae         ###   ########.fr       */
+/*   Created: 2020/09/14 13:33:41 by ashishae          #+#    #+#             */
+/*   Updated: 2020/09/14 13:33:42 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RadScorpion.hpp"
+#include "OldRifle.hpp"
 
-RadScorpion::RadScorpion() : Enemy(80, "RadScorpion")
+OldRifle::OldRifle(): AWeapon("Power Fist", 8, 50)
 {
-	std::cout << "* click click click *" << std::endl;
 }
 
-RadScorpion::RadScorpion(const RadScorpion &copy) : Enemy(copy)
+OldRifle::OldRifle(const OldRifle &copy) :
+	AWeapon(copy)
 {
-	std::cout << "* click click click *" << std::endl;
 }
 
-RadScorpion & RadScorpion::operator= (const RadScorpion &operand)
+OldRifle & OldRifle::operator= (const OldRifle &operand)
 {
-	Enemy::operator=(operand);
+	AWeapon::operator=(operand);
 	return (*this);
 }
 
-RadScorpion::~RadScorpion()
+OldRifle::~OldRifle()
 {
-	std::cout << "* SPROTCH *" << std::endl;
+}
+
+void OldRifle::attack() const
+{
+	std::cout << "* BANG! *" << std::endl;
 }

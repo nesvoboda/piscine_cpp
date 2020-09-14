@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   OldRifle.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/14 11:22:50 by ashishae         ###   ########.fr       */
+/*   Created: 2020/09/14 13:33:45 by ashishae          #+#    #+#             */
+/*   Updated: 2020/09/14 13:33:46 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-# define ENEMY_HPP
+#ifndef OLD_RIFLE_HPP
+# define OLD_RIFLE_HPP
 
-# include <string>
-# include <iostream>
+# include "AWeapon.hpp"
 
-class Enemy
+class OldRifle : public AWeapon
 {
-private:
-	int hp;
-	std::string type;
-	Enemy();
-
 public:
-	Enemy(int hp, std::string const & type);
-	Enemy(const Enemy &copy);
-	Enemy &operator= (const Enemy &operand);
-	virtual ~Enemy();
-	std::string getType() const;
-	virtual void takeDamage(int);
-	void loseHP(int);
-	int getHP() const;
+	OldRifle();
+	OldRifle(const OldRifle &copy);
+	OldRifle &operator= (const OldRifle &operand);
+	~OldRifle();
+	void attack() const;
 
 };
 

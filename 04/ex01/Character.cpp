@@ -6,15 +6,11 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/01 17:56:02 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/14 13:59:50 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
-
-Character::Character() : ap(40), current_weapon(NULL), name("Default character")
-{
-}
 
 Character::Character(std::string const &new_name) :
 	ap(40), current_weapon(NULL), name(new_name)
@@ -57,6 +53,7 @@ void Character::attack(Enemy* target)
 	if (this->current_weapon == nullptr)
 	{
 		std::cout << "Get yourself a weapon first" << std::endl;
+		return;
 	}
 	if (this->ap < this->current_weapon->getAPCost())
 	{
@@ -76,7 +73,7 @@ void Character::attack(Enemy* target)
 		delete target;
 }
 
-std::string Character::getName() const
+std::string const &Character::getName() const
 {
 	return this->name;
 }

@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   NasalDemon.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/14 11:22:50 by ashishae         ###   ########.fr       */
+/*   Created: 2020/09/14 13:33:33 by ashishae          #+#    #+#             */
+/*   Updated: 2020/09/14 13:36:29 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-# define ENEMY_HPP
+#ifndef NASAL_DEMON_HPP
+# define NASAL_DEMON_HPP
 
-# include <string>
-# include <iostream>
+# include "Enemy.hpp"
 
-class Enemy
+// http://www.catb.org/jargon/html/N/nasal-demons.html
+
+class NasalDemon : public Enemy
 {
-private:
-	int hp;
-	std::string type;
-	Enemy();
-
 public:
-	Enemy(int hp, std::string const & type);
-	Enemy(const Enemy &copy);
-	Enemy &operator= (const Enemy &operand);
-	virtual ~Enemy();
-	std::string getType() const;
-	virtual void takeDamage(int);
-	void loseHP(int);
-	int getHP() const;
-
+	NasalDemon();
+	NasalDemon(const NasalDemon &copy);
+	NasalDemon &operator= (const NasalDemon &operand);
+	~NasalDemon();
+	void takeDamage(int damage);
 };
 
 #endif

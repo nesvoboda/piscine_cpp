@@ -6,15 +6,11 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/01 18:00:19 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/14 15:13:11 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Enemy.hpp"
-
-Enemy::Enemy() : hp(100), type("Default type")
-{
-}
 
 Enemy::Enemy(int new_hp, std::string const &new_type) :
 	hp(new_hp), type(new_type)
@@ -45,11 +41,15 @@ Enemy &Enemy::operator=(const Enemy &operand)
 
 void Enemy::takeDamage(int damage)
 {
+	if (damage < 0)
+		return;
 	this->loseHP(damage);
 }
 
 void Enemy::loseHP(int damage)
 {
+	if (damage < 0)
+		return;
 	if (this->hp <= damage)
 		this->hp = 0;
 	else

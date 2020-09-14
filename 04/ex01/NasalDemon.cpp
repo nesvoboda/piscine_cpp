@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.cpp                                    :+:      :+:    :+:   */
+/*   NasalDemon.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/14 15:14:15 by ashishae         ###   ########.fr       */
+/*   Created: 2020/09/14 13:33:29 by ashishae          #+#    #+#             */
+/*   Updated: 2020/09/14 13:40:30 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RadScorpion.hpp"
+#include "NasalDemon.hpp"
 
-RadScorpion::RadScorpion() : Enemy(80, "RadScorpion")
+NasalDemon::NasalDemon() : Enemy(42, "Nasal Demon")
 {
-	std::cout << "* click click click *" << std::endl;
+	std::cout << "* cd;/bin/rm -rf *" << std::endl;
 }
 
-RadScorpion::RadScorpion(const RadScorpion &copy) : Enemy(copy)
+NasalDemon::NasalDemon(const NasalDemon &copy) : Enemy(copy)
 {
-	std::cout << "* click click click *" << std::endl;
+	std::cout << "* cd;/bin/rm -rf *" << std::endl;
 }
 
-RadScorpion & RadScorpion::operator= (const RadScorpion &operand)
+NasalDemon & NasalDemon::operator= (const NasalDemon &operand)
 {
 	Enemy::operator=(operand);
 	return (*this);
 }
 
-RadScorpion::~RadScorpion()
+NasalDemon::~NasalDemon()
 {
-	std::cout << "* SPROTCH *" << std::endl;
+	std::cout << "* UNDEFINED BEHAVIOUR *" << std::endl;
+}
+
+void NasalDemon::takeDamage(int damage)
+{
+	this->loseHP(damage);
 }

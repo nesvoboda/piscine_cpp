@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/01 17:54:34 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/14 12:04:22 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ private:
 	int ap;
 	AWeapon *current_weapon;
 	std::string name;
+	Character();
 
 public:
-	Character();
 	Character(std::string const &name);
 	Character(const Character &copy);
 	Character &operator= (const Character &operand);
@@ -33,7 +33,7 @@ public:
 	void recoverAP();
 	void equip(AWeapon *);
 	void attack(Enemy*);
-	std::string getName() const;
+	std::string const &getName() const;
 	int getAP() const;
 	std::string getWeaponName() const;
 	int	hasWeapon() const;
