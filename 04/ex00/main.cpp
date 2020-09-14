@@ -6,13 +6,14 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 15:05:13 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/13 18:31:09 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/14 10:58:46 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Victim.hpp"
 #include "Sorcerer.hpp"
 #include "Peon.hpp"
+#include "Crab.hpp"
 
 // Needed to automatically fail tests;
 #include <assert.h>
@@ -165,6 +166,47 @@ int main()
 	out("Test 19: Sorcerer | polymorph -> peon");
 	eo("Pam has been turned into a pink pony!");
 	rob.polymorph(p3);
+
+	// Crab
+	out("Test 13: Crab | Constructor");
+	eo("Some random victim called Pam just appeared!\nClick click.");
+	Crab c1("Pam");
+	check(c1.getName() == "Pam");
+	
+	out("Test 14: Crab | Copy constructor");
+	eo("Some random victim called Pam just appeared!\nClick click.");
+	Crab c2(c1);
+	check(c2.getName() == "Pam");
+
+	out("Test 15: Crab | << operator overload");
+	eo("I'm Pam and I like otters!");
+	std::cout << c2 << std::endl;
+
+	out("Test 16: Crab | Assignment operator");
+	eo("Some random victim called Karen just appeared!\nClick click.");
+	Crab c3("Karen");
+	check(c3.getName() == "Karen");
+
+	c3 = c2;
+	check(c3.getName() == "Pam");
+	
+	eo("I'm Pam and I like otters!");
+	std::cout << c2 << std::endl;
+
+	out("Test 17: Victim | Destructor");
+	{
+		eo("Some random victim called Andy just appeared!\nClick click.");
+		Crab c4("Andy");
+		eo("Bshhhh\nVictim Andy just died for no apparent reason!");
+	}
+
+	out("Test 18: Crab | getPolymorphed");
+	eo("Pam has been turned into a turtle!");
+	c3.getPolymorphed();
+
+	out("Test 19: Sorcerer | polymorph -> Crab");
+	eo("Pam has been turned into a turtle!");
+	rob.polymorph(c3);
 
 	std::cout << "TESTS END\n" << std::endl;
 	return 0;

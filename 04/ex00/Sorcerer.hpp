@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 15:05:13 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/13 18:13:10 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/14 11:10:30 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string>
 # include "Victim.hpp"
 # include "Peon.hpp"
+# include "Crab.hpp"
 
 class Sorcerer
 {
@@ -32,7 +33,6 @@ public:
 	std::string getName(void) const;
 	std::string getTitle(void) const;
 	void polymorph(Victim const &) const;
-	void polymorph(Peon const &po) const;
 
 private:
 	std::string name;

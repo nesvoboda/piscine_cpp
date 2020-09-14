@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 15:05:13 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/13 18:19:25 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/14 11:10:25 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,4 @@ std::ostream& operator<<(std::ostream& os, const Sorcerer& sorc)
 void Sorcerer::polymorph(Victim const &vic) const
 {
 	vic.getPolymorphed();
-}
-
-void Sorcerer::polymorph(Peon const &po) const
-{
-	po.getPolymorphed();
 }

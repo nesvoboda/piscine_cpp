@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 15:05:13 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/13 18:13:13 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/14 11:08:05 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	Victim &operator= (const Victim &operand);
 	~Victim();
 	std::string getName(void) const;
-	void getPolymorphed(void) const;
+	virtual void getPolymorphed(void) const;
 
 private:
 	std::string name;
