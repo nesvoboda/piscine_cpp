@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 18:44:07 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/05 12:34:27 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/16 19:17:07 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ AssaultTerminator::AssaultTerminator()
 AssaultTerminator::AssaultTerminator(const AssaultTerminator &copy)
 {
 	(void) copy;
-	std::cout << "Tactical Marine ready for battle!" << std::endl;
+	std::cout << "* teleports from space *" << std::endl;
 }
 
 AssaultTerminator & AssaultTerminator::operator= (const AssaultTerminator &operand)

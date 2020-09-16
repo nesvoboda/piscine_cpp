@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 18:44:07 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/06 10:47:10 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/16 19:15:14 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ Squad::Squad() : storage(nullptr), count(0)
 
 Squad::Squad(const Squad &copy)
 {
-	std::cout << "Copy constructor!" << std::endl;
 	this->storage = new ISpaceMarine* [copy.count];
 	for (int i = 0; i < copy.count; i++)
 	{
-		// this->storage[i] = copy.storage[i];
 		this->storage[i] = copy.storage[i]->clone();
 	}
 	this->count = copy.count;
@@ -30,10 +28,8 @@ Squad::Squad(const Squad &copy)
 
 Squad & Squad::operator= (const Squad &operand)
 {
-	std::cout << "[ASSIGN] op.count: " << operand.count << ", op.storage: " << operand.storage << std::endl;
 	if (this->count != 0)
 	{
-		std::cout << "[ASSIGN] clearing" << std::endl;
 		for (int i = 0; i < count; i++)
 		{
 			delete this->storage[i];
@@ -47,7 +43,6 @@ Squad & Squad::operator= (const Squad &operand)
 		this->storage[i] = operand.storage[i]->clone();
 	}
 	this->count = operand.count;
-	std::cout << "[ASSIGN] end. count: " << this->count << ", storage: " << this->storage << std::endl;
 	return (*this);
 }
 
@@ -79,7 +74,6 @@ ISpaceMarine* Squad::getUnit(int index) const
 
 int Squad::push(ISpaceMarine *new_marine)
 {
-	std::cout << "[PUSH] count: " << this->count << ", storage: " << this->storage << std::endl;
 	ISpaceMarine **temp;
 	ISpaceMarine **temp2;
 	temp = new ISpaceMarine* [this->count + 1];
