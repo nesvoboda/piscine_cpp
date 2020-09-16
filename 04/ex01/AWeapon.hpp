@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/13 18:28:42 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/16 19:24:32 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	int getAPCost() const;
 	int getDamage() const;
 	virtual void attack() const = 0;
-	std::string getName() const;
+	std::string const &getName() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/14 11:22:50 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/16 19:25:22 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	Enemy(const Enemy &copy);
 	Enemy &operator= (const Enemy &operand);
 	virtual ~Enemy();
-	std::string getType() const;
+	std::string const &getType() const;
 	virtual void takeDamage(int);
 	void loseHP(int);
 	int getHP() const;

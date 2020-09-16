@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:49:27 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/13 18:27:51 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/16 19:25:09 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int AWeapon::getDamage() const
 	return this->damage;
 }
 
-std::string AWeapon::getName() const
+std::string const &AWeapon::getName() const
 {
 	return this->name;
 }
