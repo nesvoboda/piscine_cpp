@@ -6,16 +6,11 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 10:58:35 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/06 12:49:00 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/16 19:58:50 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
-
-AMateria::AMateria() :
-	type("NoType")
-{
-}
 
 AMateria::AMateria(const AMateria &copy) :
 	type(copy.type)
@@ -55,6 +50,11 @@ void AMateria::use(ICharacter& target)
 void AMateria::incrementXp(void)
 {
 	this->_xp += 10;
+}
+
+void AMateria::setType(std::string const &newType)
+{
+	this->type = newType;
 }
 
 AMateria::~AMateria()
