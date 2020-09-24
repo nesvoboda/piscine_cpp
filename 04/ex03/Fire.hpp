@@ -1,44 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*   Fire.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 10:58:35 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/23 13:22:32 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/23 13:29:18 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#ifndef FIRE_HPP
+# define FIRE_HPP
 
-Cure::Cure() : AMateria("cure")
-{
-}
+# include <iostream>
+# include <string>
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-Cure::Cure(const Cure &copy) : AMateria(copy)
+class Fire : public AMateria
 {
-}
+public:
+	Fire();
+	Fire(const Fire &copy);
+	Fire &operator= (const Fire &operand);
+	~Fire();
+	AMateria* clone() const;
+	void use(ICharacter& target);
+};
 
-Cure & Cure::operator= (const Cure &operand)
-{
-	AMateria::operator=(operand);
-	return (*this);
-}
-
-Cure::~Cure()
-{
-}
-
-AMateria* Cure::clone() const
-{
-	Cure *newCure = new Cure(*this);
-	return newCure;
-}
-
-void Cure::use(ICharacter& target)
-{
-	// this->incrementXp();
-	AMateria::use(target);
-	std::cout << "* heals " << target.getName() << "’s wounds * " << std::endl;
-}
+#endif

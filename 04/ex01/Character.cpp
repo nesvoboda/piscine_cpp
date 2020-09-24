@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/16 19:29:59 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/21 15:52:41 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ Character& Character::operator= (const Character &operand)
 
 Character::~Character()
 {
-	//
 }
 
 void Character::recoverAP(void)

@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 10:58:35 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/16 19:58:24 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/23 13:23:25 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ public:
 	AMateria(std::string const & type);
 	AMateria(const AMateria &copy);
 	AMateria &operator= (const AMateria &operand);
-	void	setType(const std::string &newType);
 
-	void incrementXp(void);
 	virtual ~AMateria();
 	std::string const & getType() const; //Returns the materia type
 	unsigned int getXP() const; //Returns the Materia's XP

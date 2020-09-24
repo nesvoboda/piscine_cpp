@@ -1,51 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Fire.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 10:58:35 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/23 13:23:32 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/23 13:36:02 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "Fire.hpp"
 
-AMateria::AMateria(const AMateria &copy) :
-	type(copy.type), _xp(copy._xp)
+Fire::Fire() : AMateria("fire")
 {
 }
 
-AMateria &AMateria::operator= (const AMateria &operand)
+Fire::Fire(const Fire &copy) : AMateria(copy)
 {
-	this->_xp = operand._xp;
+}
+
+Fire & Fire::operator= (const Fire &operand)
+{
+	AMateria::operator=(operand);
 	return (*this);
 }
 
-//Returns the materia type
-std::string const & AMateria::getType() const
-{
-	return this->type;
-}
-
-AMateria::AMateria(std::string const & new_type) :
-	type(new_type), _xp(0)
+Fire::~Fire()
 {
 }
 
-//Returns the Materia's XP
-unsigned int AMateria::getXP() const
+AMateria* Fire::clone() const
 {
-	return this->_xp;
+	Fire *newFire = new Fire(*this);
+	return newFire;
 }
 
-void AMateria::use(ICharacter& target)
+void Fire::use(ICharacter& target)
 {
-	this->_xp += 10;
-	(void) target;
-}
-
-AMateria::~AMateria()
-{
+	AMateria::use(target);
+	std::cout << "* shoots a fireball at " << target.getName() << " *" << std::endl;
 }

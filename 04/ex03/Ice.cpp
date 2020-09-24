@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 10:58:35 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/06 12:35:57 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/23 13:23:51 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Ice::Ice() : AMateria("ice")
 {
 }
 
-Ice::Ice(const Ice &copy) : AMateria(copy.getType())
+Ice::Ice(const Ice &copy) : AMateria(copy)
 {
 }
 
@@ -38,6 +38,6 @@ AMateria* Ice::clone() const
 
 void Ice::use(ICharacter& target)
 {
-	this->incrementXp();
+	AMateria::use(target);
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
