@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 20:11:19 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/26 20:53:31 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/26 21:07:46 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ Form &Form::operator= (const Form &operand)
 	return (*this);
 }
 
-
 std::string Form::getName() const
 {
 	return this->name;
@@ -64,14 +63,12 @@ unsigned int Form::getGradeToExecute() const
 	return this->gradeToExecute;
 }
 
-
 void Form::beSigned(Bureaucrat &b)
 {
 	if (b.getGrade() > this->gradeToSign)
 		throw Form::GradeTooLowException();
 	this->isSigned = true;
 }
-
 
 const char* Form::GradeTooHighException::what() const throw()
 {
