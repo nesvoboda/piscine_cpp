@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 13:33:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/14 13:36:29 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/28 17:10:40 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	NasalDemon();
 	NasalDemon(const NasalDemon &copy);
 	NasalDemon &operator= (const NasalDemon &operand);
-	~NasalDemon();
+	virtual ~NasalDemon();
 	void takeDamage(int damage);
 };
 

@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 10:53:08 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/14 10:53:25 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/28 17:03:58 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	Crab(std::string name);
 	Crab(const Crab &copy);
 	Crab &operator= (const Crab &operand);
-	~Crab();
+	virtual ~Crab();
 	void getPolymorphed(void) const;
 };
 
