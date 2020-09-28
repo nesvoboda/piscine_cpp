@@ -69,8 +69,8 @@ int main()
 			me->attack(b);
 			std::cout << *me;
 
+			// This is necessary to pass Valgrind's leaks check.
 			delete me;
-			delete b;
 			delete pr;
 			delete pf;
 		}
@@ -382,13 +382,11 @@ int main()
 		check(michael.getAP() == 40);
 		
 		std::cout << "\n Additional tests end\n" << std::endl;
-		delete target;
-		delete pf;
-		delete pr;
-		delete b;
 	}
-	std::cout << "\nYou can now check for leaks\n";
-	
-	sleep(30);
+
+	// Uncomment the 2 following lines if you're using leaks on Mac OS instead of Valgrind
+	// std::cout << "You now have 30 seconds to check for leaks" << std::endl;
+	// sleep(30);
+
 	return 0;
 }

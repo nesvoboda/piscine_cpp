@@ -21,7 +21,7 @@ public:
 	PowerFist();
 	PowerFist(const PowerFist &copy);
 	PowerFist &operator= (const PowerFist &operand);
-	virtual ~PowerFist();
+	~PowerFist();
 	void attack() const;
 };
 

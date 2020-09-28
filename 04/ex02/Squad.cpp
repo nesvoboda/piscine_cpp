@@ -30,13 +30,14 @@ Squad & Squad::operator= (const Squad &operand)
 {
 	if (this->count != 0)
 	{
-		for (int i = 0; i < count; i++)
+		for (int i = 0; i < this->count; i++)
 		{
 			delete this->storage[i];
 		}
-		delete storage;
+		
 	}
-
+	delete [] this->storage;
+	this->storage = nullptr;
 	this->storage = new ISpaceMarine* [operand.count];
 	for (int i = 0; i < operand.count; i++)
 	{
@@ -52,8 +53,7 @@ Squad::~Squad()
 	{
 		delete this->storage[i];
 	}
-	if (this->count != 0)
-		delete storage;
+	delete [] storage;
 }
 
 
@@ -86,7 +86,7 @@ int Squad::push(ISpaceMarine *new_marine)
 	temp2 = this->storage;
 	this->storage = temp;
 	if (temp2 != nullptr)
-		delete temp2;
+		delete [] temp2;
 	return this->count;
 }
 

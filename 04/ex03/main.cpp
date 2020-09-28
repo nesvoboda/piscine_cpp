@@ -82,7 +82,7 @@ int main()
 			delete src;
 		}
 		std::cout << "\nAdditional tests\n\n";
-		
+	
 		out("Ice | Constructor");
 		Ice i1 = Ice();
 		check(i1.getType() == "ice");
@@ -131,6 +131,7 @@ int main()
 		AMateria *i7 = i6.clone();
 		check(i7->getType() == "ice");
 		check(i7->getXP() == 10);
+		delete i7;
 
 		out("Cure | Constructor");
 		Cure c1 = Cure();
@@ -181,6 +182,7 @@ int main()
 		AMateria *c7 = c6.clone();
 		check(c7->getType() == "cure");
 		check(c7->getXP() == 10);
+		delete c7;
 
 		out("Fire | Constructor");
 		Fire f1 = Fire();
@@ -230,6 +232,7 @@ int main()
 		AMateria *f7 = f6.clone();
 		check(f7->getType() == "fire");
 		check(f7->getXP() == 10);
+		delete f7;
 
 
 
@@ -267,6 +270,7 @@ int main()
 		ICharacter *target = new Character("Jim");
 		AMateria *cure1 = new Cure();
 
+
 		out("Character | equip() nullptr");
 		h3.equip(nullptr);
 
@@ -285,28 +289,34 @@ int main()
 		eo("* shoots an ice bolt at Jim *");
 		h3.use(1, *target);
 
+
+
 		out("Character | unequip()");
+	
 		h3.unequip(0);
 		eo("");
+	
 		h3.use(0, *target);
-		
+	
 		out("Character | unequip() nonexisting item");
 		h3.unequip(-1);
 		h3.unequip(2);
 		h3.unequip(100);
-
+	
 		out("Character | assignment with items");
 		Character h5 = Character("Erin");
 		AMateria *ice2 = new Ice();
 		AMateria *cure2 = new Ice();
 		h5.equip(ice2);
 		h5.equip(cure2);
-		
+	
 		Character h6 = Character("Sammy");
 		h6 = h5;
 		check(h6.getName() == "Erin");
 		eo("* shoots an ice bolt at Jim *");
 		h6.use(0, *target);
+
+	
 
 		out("Character | copy construction with items");
 		Character h7 = Character(h6);
@@ -327,12 +337,16 @@ int main()
 		h8.equip(ice1);
 		h8.equip(ice1);
 
+
+
 		out("Character | equality operator with empty item slots");
 		Character h9 = Character("Oscar");
 		h9.equip(new Ice());
-		h9.equip(new Cure());
+		AMateria *unequip_later = new Cure();
+		h9.equip(unequip_later);
 		h9.equip(new Ice());
 		h9.unequip(1);
+		delete unequip_later;
 
 		Character h10 = Character("Stanley");
 		h10 = h9;
@@ -351,7 +365,7 @@ int main()
 
 		// nothing should happen
 		m2.learnMateria(nullptr);
-
+	
 		// nothing should happen
 		m2.createMateria("nothing");
 
@@ -390,7 +404,7 @@ int main()
 		newCure = m2.createMateria("cure");
 		check(newCure->getType() == "cure");
 		check(newCure->getXP() == cure3->getXP());
-
+	
 		// This shouldn't do anything
 		m2.createMateria("Whatever");
 		
@@ -410,6 +424,8 @@ int main()
 		m7.learnMateria(new Cure());
 		m7 = m6;
 
+	
+
 		out("MateriaSource | Inventory full");
 		MateriaSource m8 = MateriaSource();
 		m8.learnMateria(new Ice());
@@ -418,16 +434,19 @@ int main()
 		m8.learnMateria(new Cure());
 		AMateria *deadCure = new Cure();
 		m8.learnMateria(deadCure);
+		delete deadCure;
 
 		out("MateriaSource | Inventory full and unknown type");
 		m8.createMateria("Whatever");
 
-
-		std::cout << "You now have 30 seconds to check for leaks" << std::endl;
-		sleep(30);
-
+		delete target;
+		delete newCure;
+		delete newIce;
+		delete cure1;
 	}
-	std::cout << "If you're really thorough, you can now check for leaks outside the test namespace." << std::endl;
-	sleep(30);
+
+	// Uncomment the 2 following lines if you're using leaks on Mac OS instead of Valgrind
+	// std::cout << "You now have 30 seconds to check for leaks" << std::endl;
+	// sleep(30);
 	return 0;	
 }

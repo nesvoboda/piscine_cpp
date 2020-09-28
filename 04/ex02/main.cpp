@@ -239,14 +239,11 @@ int main()
 		delete a2;
 		delete a3;
 		delete a5;
-
-		std::cout << "Now you have 30 seconds to check for leaks "
-		<< "in the test namespace" << std::endl;
-		sleep(30);
 		
 	}
-	std::cout << "Now you have 30 seconds to check for leaks "
-		<< "outside the test namespace" << std::endl;
-	sleep(30);
+
+	// Uncomment the 2 following lines if you're using leaks on Mac OS instead of Valgrind
+	// std::cout << "You now have 30 seconds to check for leaks" << std::endl;
+	// sleep(30);
 	return 0;
 }
