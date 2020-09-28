@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/28 12:33:51 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/28 17:52:01 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,11 @@ int main()
 			std::cout << *me;
 			me->attack(b);
 			std::cout << *me;
+
+			delete me;
+			delete b;
+			delete pr;
+			delete pf;
 		}
 
 		std::cout << "\n Additional tests \n" << std::endl;
@@ -377,8 +382,13 @@ int main()
 		check(michael.getAP() == 40);
 		
 		std::cout << "\n Additional tests end\n" << std::endl;
+		delete target;
+		delete pf;
+		delete pr;
+		delete b;
 	}
 	std::cout << "\nYou can now check for leaks\n";
+	
 	sleep(30);
 	return 0;
 }
