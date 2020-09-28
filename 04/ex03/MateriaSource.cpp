@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 10:58:35 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/24 19:01:18 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/09/28 12:22:03 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,24 +92,6 @@ void MateriaSource::learnMateria(AMateria *input)
 		return;
 	this->localMateria[i] = input;
 }
-
-// So, this is the way I decided to approach the problem of createMateria.
-//
-// Our goals are:
-// - create an object of type corresponding to the parameter
-// - transfer XP from learned Materia to the new object.
-//
-// I found two ways to accomplish this:
-//
-// 1) Add setters of type and xp, as well as a default constructor,
-//		to AMateria. Pros: lets you create Materia of arbitrary type.
-//		Cons: modifies the abstract class significantly
-// 2) Use the assignment operator (that transfers the xp) on an object 
-//		of known type. Pros: uses the abstract class fully. Cons:
-//		Type of Materia has to be reflected in this function.
-//
-// I've selected the second way, as it seemed to give me more opportunity
-// to learn new things.
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
