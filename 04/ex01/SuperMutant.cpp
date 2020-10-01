@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 13:48:33 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/13 19:00:14 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/01 15:25:05 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ void SuperMutant::takeDamage(int damage)
 		realDamage = 0;
 	else
 		realDamage = damage-3;
-	this->loseHP(realDamage);
+	Enemy::takeDamage(realDamage);
 }

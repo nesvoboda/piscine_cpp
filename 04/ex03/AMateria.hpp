@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 10:58:35 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/23 13:23:25 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/01 15:34:16 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ private:
 	AMateria();
 
 public:
-
 	AMateria(std::string const & type);
 	AMateria(const AMateria &copy);
 	AMateria &operator= (const AMateria &operand);

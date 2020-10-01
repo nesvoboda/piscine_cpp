@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 15:05:13 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/28 14:06:13 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/01 15:33:48 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Victim
 private:
 	// A victim without a name doesn't make a lot of sense
 	Victim();
+	std::string name;
 
 public:
 	Victim(std::string name);
@@ -29,9 +30,6 @@ public:
 	virtual ~Victim();
 	std::string getName(void) const;
 	virtual void getPolymorphed(void) const;
-
-private:
-	std::string name;
 };
 
 std::ostream& operator<<(std::ostream& os, const Victim& vic);

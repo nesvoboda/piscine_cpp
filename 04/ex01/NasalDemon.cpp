@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 13:33:29 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/14 13:40:30 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/01 15:25:38 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,4 @@ NasalDemon & NasalDemon::operator= (const NasalDemon &operand)
 NasalDemon::~NasalDemon()
 {
 	std::cout << "* UNDEFINED BEHAVIOUR *" << std::endl;
-}
-
-void NasalDemon::takeDamage(int damage)
-{
-	this->loseHP(damage);
 }

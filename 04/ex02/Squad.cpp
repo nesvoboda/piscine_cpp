@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 18:44:07 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/16 19:15:14 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/01 15:33:16 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ Squad & Squad::operator= (const Squad &operand)
 		{
 			delete this->storage[i];
 		}
-		
 	}
 	delete [] this->storage;
 	this->storage = nullptr;
