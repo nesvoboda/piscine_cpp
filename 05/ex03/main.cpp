@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 19:26:15 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/30 10:26:26 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/02 15:12:02 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include "Intern.hpp"
 
 #include <iostream>
+
+#include <string.h>
 
 // Sleep
 #include <unistd.h>
@@ -205,7 +207,7 @@ int main(void)
 
 	out("ShrubberyCreationForm | execute() -> file error");
 
-	ShrubberyCreationForm scf6 = ShrubberyCreationForm("/file");
+	ShrubberyCreationForm scf6 = ShrubberyCreationForm("/file/asdfasdf/asdfasdfasdfaf/sdafdfa");
 	tom.signForm(scf6);
 
 	exceptionCaught = false;

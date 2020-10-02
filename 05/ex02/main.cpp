@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 19:26:15 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/29 18:47:18 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/02 15:07:55 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include "PresidentialPardonForm.hpp"
 
 #include <iostream>
+
+#include <string.h>
 
 // Sleep
 #include <unistd.h>
@@ -204,7 +206,7 @@ int main(void)
 
 	out("ShrubberyCreationForm | execute() -> file error");
 
-	ShrubberyCreationForm scf6 = ShrubberyCreationForm("/file");
+	ShrubberyCreationForm scf6 = ShrubberyCreationForm("/fasdfasdfile/asdfasdf/asdfadf");
 	tom.signForm(scf6);
 
 	exceptionCaught = false;

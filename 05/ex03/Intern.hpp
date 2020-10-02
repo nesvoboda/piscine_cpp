@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 18:55:34 by ashishae          #+#    #+#             */
-/*   Updated: 2020/09/29 20:17:12 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/02 14:55:43 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ private:
 	// than in all constructors etc...
 
 	// Also, I've made them constant, because it doesn't make any sense to change
-	// them in runtime. This has made the type declaration quite cryptic
+	// them during runtime. This has made the type declaration quite cryptic
 	// for functions.
 
 	static const std::string labels[3];
