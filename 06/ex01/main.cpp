@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 10:35:14 by ashishae          #+#    #+#             */
-/*   Updated: 2020/10/05 21:39:34 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/08 15:05:04 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ void *serialize(void)
 
 Data * deserialize(void * raw)
 {
-	unsigned char *val = static_cast<unsigned char *>(raw);
+	unsigned char *val = reinterpret_cast<unsigned char *>(raw);
 
 	Data *d = new Data;
 	d->s1 = decode_string(val);
@@ -127,7 +127,7 @@ Data * deserialize(void * raw)
 	return d;
 }
 
-int main(int ac, char **av)
+int main(void)
 {
 	srand (time(NULL));
 
@@ -147,8 +147,8 @@ int main(int ac, char **av)
 	std::cout << "Do they match?:" << std::endl;
 
 	std::cout << "s1: " << (d->s1 == s1_control ? "Yes" : "No") << std::endl;
-	std::cout << "n:  " << (d->s1 == s1_control ? "Yes" : "No") << std::endl;
-	std::cout << "s2: " << (d->s1 == s1_control ? "Yes" : "No") << std::endl;
+	std::cout << "n:  " << (d->n == n_control ? "Yes" : "No") << std::endl;
+	std::cout << "s2: " << (d->s2 == s2_control ? "Yes" : "No") << std::endl;
 
 	return 1;
 }

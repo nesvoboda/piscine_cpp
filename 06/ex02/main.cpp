@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 12:07:34 by ashishae          #+#    #+#             */
-/*   Updated: 2020/10/08 14:27:36 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/08 14:53:54 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,9 @@ int main(void)
 	
 	Base *first = b.generate();
 	
+
+	std::cout << std::endl << "Guessing class from pointer" << std::endl;
 	identify_from_pointer(first);
+	std::cout << std::endl << "Guessing class from reference" << std::endl;
 	identify_from_reference(*first);
 }

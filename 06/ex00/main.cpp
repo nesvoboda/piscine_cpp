@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 10:35:14 by ashishae          #+#    #+#             */
-/*   Updated: 2020/10/03 20:59:59 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/08 14:46:05 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,7 +177,7 @@ void print_double_literal(double d)
 
 bool handle_float_literal(std::string input)
 {
-	float result;
+	double result;
 	try
 	{
 		result = std::stod(input, nullptr);
