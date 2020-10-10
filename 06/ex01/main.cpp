@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 10:35:14 by ashishae          #+#    #+#             */
-/*   Updated: 2020/10/08 15:05:04 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/10 15:52:39 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void *serialize(void)
 	encode_string(d.s1, &ret[0]);
 	encode_int(d.n, &ret[8]);
 	encode_string(d.s2, &ret[12]);
-	return ret;
+	return reinterpret_cast<void *>(ret);
 }
 
 Data * deserialize(void * raw)
@@ -150,5 +150,8 @@ int main(void)
 	std::cout << "n:  " << (d->n == n_control ? "Yes" : "No") << std::endl;
 	std::cout << "s2: " << (d->s2 == s2_control ? "Yes" : "No") << std::endl;
 
-	return 1;
+	delete [] reinterpret_cast<unsigned char *>(s);
+	delete d;
+
+	return 0;
 }
