@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 10:35:14 by ashishae          #+#    #+#             */
-/*   Updated: 2020/10/08 14:46:05 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/10 15:17:47 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <climits>
 #include <cfloat>
 #include <cmath>
+#include <math.h>
 
 bool is_character_literal(std::string input)
 {
