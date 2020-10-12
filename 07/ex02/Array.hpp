@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 17:52:24 by ashishae          #+#    #+#             */
-/*   Updated: 2020/10/09 19:32:54 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/12 11:04:37 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ Array<T> &Array<T>::operator= (const Array<T> &operand)
 template <typename T>
 T& Array<T>::operator[](unsigned int idx)
 {
-	if (this->_size == 0 ||  idx > (this->_size - 1))
+	if (this->_size == 0 || idx > (this->_size - 1))
 		throw Array::OutOfBoundsException();
 	else
 		return this->storage[idx];

@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 17:21:58 by ashishae          #+#    #+#             */
-/*   Updated: 2020/10/09 17:25:20 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/12 11:12:59 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void check(int expression)
 
 template <typename T>
 void swap(T &a, T &b) {
-	T	tmp;
+	// This should protect from classes not having a default constructor.
+	T	tmp = a;
 
-	tmp = a;
 	a = b;
 	b = tmp;
 }
@@ -139,7 +139,6 @@ int main( void )
 	int a6 = 3;
 	int b6 = 3;
 	check(max(a6, b6) == b6);
-
 
 	return 0;
 }
