@@ -2,6 +2,7 @@
 # define MUTANTSTACK_HPP
 
 # include <stack>
+# include <iterator>
 
 template<typename T>
 class MutantStack : public std::stack<T> {
@@ -12,8 +13,26 @@ public:
 	MutantStack(const MutantStack &copy);
 	MutantStack &operator= (const MutantStack &operand);
 
-private:
+	class iterator : public std::iterator<std::bidirectional_iterator_tag, T>
+	{
+	private:
+		T *ptr;
+	public:
+		iterator() : ptr(NULL) {};
+		iterator(T *new_ptr) : ptr(new_ptr) {};
+		iterator(const iterator& copy) : ptr(copy.ptr) {};
+		iterator& operator=(const iterator &operand) {this->ptr = operand.ptr; return *this;};
+		iterator& operator--() {--ptr;return *this;}
+		iterator& operator++() {++ptr;return *this;}
+		iterator operator++(int) {iterator tmp(*this); operator++(); return tmp;}
+		iterator operator--(int) {iterator tmp(*this); operator--(); return tmp;}
+		bool operator==(const iterator& rhs) const {return ptr==rhs.ptr;}
+		bool operator!=(const iterator& rhs) const {return ptr!=rhs.ptr;}
+		T& operator*() {return *ptr;}
+	};
 
+	iterator begin();
+	iterator end();
 };
 
 template <typename T>
@@ -39,34 +58,18 @@ MutantStack<T> &MutantStack<T>::operator= (const MutantStack &operand)
 	return (*this);
 }
 
-// template <typename T>
-// class MutantStackIterator {
-
-// public:
-// 	MutantStackIterator();
-// 	~MutantStackIterator();
-// 	MutantStackIterator(const MutantStackIterator &copy);
-// 	MutantStackIterator &operator= (const MutantStackIterator &operand);
-
-// private:
-// 	MutantStack<T> &ms;
-
-// };
-
-
-#include <iterator>     // std::iterator, std::input_iterator_tag
 template <typename T>
-class MutantStackIterator : public std::iterator<std::input_iterator_tag, T>
+typename MutantStack<T>::iterator MutantStack<T>::begin() 
 {
-  int* p;
-public:
-  MutantStackIterator();
-  MutantStackIterator(const MutantStackIterator& copy);
-  MutantStackIterator& operator++() {++p;return *this;}
-  MutantStackIterator operator++(int) {MutantStackIterator tmp(*this); operator++(); return tmp;}
-  bool operator==(const MutantStackIterator& rhs) const {return p==rhs.p;}
-  bool operator!=(const MutantStackIterator& rhs) const {return p!=rhs.p;}
-  int& operator*() {return *p;}
-};
+	return iterator(&(this->c.front()));
+}
+
+template <typename T>
+typename MutantStack<T>::iterator MutantStack<T>::end() 
+{
+	iterator tmp(&this->c.back());
+	tmp++;
+	return tmp;
+}
 
 #endif
