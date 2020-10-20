@@ -6,19 +6,18 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 21:12:49 by ashishae          #+#    #+#             */
-/*   Updated: 2020/10/11 21:49:20 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/20 12:09:45 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 #include <iostream>
+#include <climits>
 
 Span::Span(unsigned int N)
 {
-	this->storage = std::vector<int>();
-	this->storage.reserve(5);
+	this->storage.reserve(N);
 	this->n = N;
-	// std::cout << this->storage.size() << std::endl;
 }
 
 Span::~Span()
@@ -54,7 +53,7 @@ int Span::shortestSpan(void)
 {
 	if (this->storage.size() < 2)
 		throw Span::NotEnoughNumbers();
-	int minRange = this->longestSpan();
+	int minRange = INT_MAX;
 	for (std::vector<int>::iterator i = storage.begin(); i < storage.end()-1; i++)
 	{
 		if ((*(i+1) - *i) < minRange)
@@ -63,7 +62,6 @@ int Span::shortestSpan(void)
 		}
 	}
 	return minRange;
-	
 }
 
 int Span::longestSpan(void)

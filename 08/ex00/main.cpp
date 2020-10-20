@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 20:52:18 by ashishae          #+#    #+#             */
-/*   Updated: 2020/10/10 21:04:56 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/20 10:44:32 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,6 @@ void out(std::string s)
 	test_no += 1;
 }
 
-// void eo(std::string s)
-// {
-// 	std::cout << "\33[1;33m" << "Expected output:" <<"\033[0m" << std::endl;
-// 	std::cout << s << std::endl;
-// }
-
 void check(int expression)
 {
 	// If expression doesn't evaluate to 1, the program will abort
@@ -62,10 +56,7 @@ void check(int expression)
 	std::cout << "\033[92m✓ PASS\033[0m" << std::endl;
 }
 
-
 // Test-related stuff ends
-
-
 
 int main(void)
 {

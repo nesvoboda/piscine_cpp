@@ -6,7 +6,7 @@
 /*   By: ashishae <ashishae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 19:18:36 by ashishae          #+#    #+#             */
-/*   Updated: 2020/10/11 22:03:00 by ashishae         ###   ########.fr       */
+/*   Updated: 2020/10/20 12:41:09 by ashishae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,6 @@ void out(std::string s)
 	test_no += 1;
 }
 
-// void eo(std::string s)
-// {
-// 	std::cout << "\33[1;33m" << "Expected output:" <<"\033[0m" << std::endl;
-// 	std::cout << s << std::endl;
-// }
-
 void check(int expression)
 {
 	// If expression doesn't evaluate to 1, the program will abort
@@ -63,7 +57,27 @@ void check(int expression)
 }
 
 
+#include <vector>
+#include <algorithm>
+#include <deque>
+
+int f()
+{
+	static int i = 0;
+	return i++;
+}
+
+int f2()
+{
+	static int i = 0;
+	return i++;
+}
+
 // Test-related stuff ends
+
+// You may want to reduce this number if you're running
+// valgrind or you're on a slow machine
+#define BIG_TEST 10000000
 
 int main(void)
 {
@@ -132,4 +146,46 @@ int main(void)
 	s9.addNumber(0);
 	s9.addNumber(0);
 	TEST_EXCEPTION(s9.addNumber(0), Span::SpanFull, "This Span is full, you can't add any more numbers to it");
+
+	out("Span | addRange");
+	std::vector<int> v(BIG_TEST);
+	
+	std::cout << "Generating a range of " << BIG_TEST << " numbers" << std::endl;
+	std::generate(v.begin(), v.end(), f);
+	
+	Span s10(BIG_TEST);
+	std::cout << "Adding range" << std::endl;
+	s10.addRange(v.begin(), v.end());
+
+	std::cout << "Running checks" << std::endl;
+	check(s10.shortestSpan() == 1);
+	check(s10.longestSpan() == BIG_TEST-1);
+	
+	out("Span | addRange in two bursts");
+	std::vector<int> v1(500);
+	std::vector<int> v2(500);
+	std::generate(v1.begin(), v1.end(), f2);
+	std::generate(v2.begin(), v2.end(), f2);
+
+	Span s11(1000);
+	s11.addRange(v1.begin(), v1.end());
+	s11.addRange(v2.begin(), v2.end());
+	check(s11.shortestSpan() == 1);
+	check(s11.longestSpan() == 999);
+
+	out("Span | illegal addRange");
+	TEST_EXCEPTION(s11.addRange(v2.begin(), v2.end()), Span::SpanFull, "This Span is full, you can't add any more numbers to it");
+	
+	Span s12(500);
+	TEST_EXCEPTION(s12.addRange(v.begin(), v.end()), Span::SpanFull, "This Span is full, you can't add any more numbers to it");
+	
+	out("Span | addRange can take different (iterable) containers");
+	std::deque<int> d1(1000);
+	std::generate(d1.begin(), d1.end(), f);
+	
+	Span s13(1000);
+	s13.addRange(d1.begin(), d1.end());
+
+	check(s13.shortestSpan() == 1);
+	check(s13.longestSpan() == 999);
 }
